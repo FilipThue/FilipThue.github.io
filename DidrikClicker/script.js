@@ -50,13 +50,13 @@ if(!localStorage.clickBoost){
 }
 
 /* ---------------------------------------- */
-if(localStorage.cookies){
+/*if(localStorage.cookies){
     localStorage.cookies = 500
 }
 if(localStorage.clickBoost){
     localStorage.clickBoost = 0
     priceClickBoost = 20
-}
+} */
 /* ---------------------------------------- */
 
 
