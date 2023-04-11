@@ -40,7 +40,7 @@ function sleep(ms) {
 //////////////////////////////////////////////////////////
 
 if(!localStorage.cookies){
-    localStorage.cookies = 21
+    localStorage.cookies = 0
 }
 if(!localStorage.clickBoost){
     localStorage.clickBoost = 0
