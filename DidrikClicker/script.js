@@ -77,8 +77,11 @@ function update (){
     priceJediDidrikEl.innerHTML = priceClickBoost
 }
 
+let clicks = 0
+
 function tell (){
     localStorage.cookies = Number(localStorage.cookies) + 1 + Number(localStorage.clickBoost)
+    clicks = clicks + 1
     update ()
 }
 
@@ -279,3 +282,26 @@ function draw() {
 // Loop the animation
 setInterval(draw, 33);
 //-----------------------------------------------
+
+let timerId = setInterval(dancingDidrik, 30000)
+
+
+
+
+async function dancingDidrik(){
+    if(clicks>50){
+        localStorage.cookies = Math.round(Number(localStorage.cookies) * 1.05)
+        update ()
+        clicks = 0
+        danseDidrikEl.classList.add('show')
+        canvas.classList.add('show')
+        await sleep(10000)
+        danseDidrikEl.classList.remove('show')
+        canvas.classList.remove('show')
+        
+        
+    }
+    else{
+        clicks = 0 
+    }
+}
