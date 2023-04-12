@@ -6,6 +6,8 @@ img.setAttribute("draggable", false);
 let activatedL = false
 let activatedR = false
 
+let clicks = 0
+
 let cookieCounterEl = document.querySelector('.counter')
 let dpsCounterEl = document.querySelector('.dpsCounter')
 
@@ -30,6 +32,7 @@ let andersClickEl = document.querySelector(".andersClick")
 let buyClickBoostEl = document.querySelector('.jediDidrik')
 let levelJediDidrikEl = document.querySelector('.levelJediDidrik')
 let priceJediDidrikEl = document.querySelector('.priceJediDidrik')
+let dpsJediDidrikEl = document.querySelector('.dpsJediDidrik')
 
 //////////////////////////////////////////////////////////
 
@@ -50,7 +53,7 @@ if(!localStorage.clickBoost){
 }
 
 /* ---------------------------------------- */
-/*if(localStorage.cookies){
+/* if(localStorage.cookies){
     localStorage.cookies = 500
 }
 if(localStorage.clickBoost){
@@ -58,6 +61,7 @@ if(localStorage.clickBoost){
     priceClickBoost = 20
 } */
 /* ---------------------------------------- */
+
 
 
 update ()
@@ -73,11 +77,12 @@ andersClickEl.addEventListener('click', newDisc)
 
 function update (){
     cookieCounterEl.innerHTML = `${localStorage.cookies} DidriCoins`
+
     levelJediDidrikEl.innerHTML = `Level: ${Number(localStorage.clickBoost) + 1}`
     priceJediDidrikEl.innerHTML = priceClickBoost
-}
+    dpsJediDidrikEl.innerHTML = `Level: ${Number(localStorage.clickBoost)}`
 
-let clicks = 0
+}
 
 function tell (){
     localStorage.cookies = Number(localStorage.cookies) + 1 + Number(localStorage.clickBoost)
@@ -282,8 +287,12 @@ function draw() {
 // Loop the animation
 setInterval(draw, 33);
 //-----------------------------------------------
+// blue didrik
 
 let timerId = setInterval(dancingDidrik, 30000)
+
+
+
 
 
 
@@ -298,10 +307,8 @@ async function dancingDidrik(){
         await sleep(10000)
         danseDidrikEl.classList.remove('show')
         canvas.classList.remove('show')
-        
-        
+    } else{
+        clicks = 0
     }
-    else{
-        clicks = 0 
-    }
+
 }

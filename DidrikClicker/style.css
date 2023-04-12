@@ -5,7 +5,7 @@
 }
 
 :root{
-    --cookieSize: 250px;
+    --cookieSize: 200px;
 }
 
 
@@ -16,7 +16,7 @@ body{
     background: #000;
     /* background-image: url(./images/background.webp);
     background-repeat: no-repeat; */
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
     
     
     min-height: 100vh;
@@ -143,16 +143,17 @@ header>h1{
 }
 
 .disc{
-    height: 60px;
+    height: 40px;
     position: absolute;
-    padding-left: 225px;
+    padding-left: 120px;
     top: -15px;
+    transform: translateY(50%);
     transition: padding 0.2s;
     transform-origin: 0;
 }
 
 .disc.trykkes{
-    padding-left: 210px;
+    padding-left: 110px;
 }
 /* //////////////////////////////////////////////////////// */
 
@@ -172,6 +173,7 @@ footer{
     align-items: center;  
 
     z-index: 10;
+    padding-bottom: 60px;
      
 }
 
@@ -205,7 +207,7 @@ footer>div:hover{
 }
 
 .shop{
-    width: 100%;
+    width: 100vw;
     height: 93%;
     background-color:#444444;
     color: white;
@@ -326,13 +328,17 @@ canvas {
     z-index: -2;
 }
 
+@media only screen and (min-width:1140px){
+    footer{
+        padding-bottom: 0px;
+    }
+    
+}
 
-
-@media(max-width:750px){
+/* @media(max-width:750px){
     .disc{
         height: 26px;
-        padding-left: 150px;
-        top: -15px;
+        padding-left: 130px;
     }
     
     .disc.trykkes{
@@ -342,7 +348,7 @@ canvas {
         height: 166px;
         width: 166px;
     }
-}
+} */
 
 
 /* @media(max-width: 1100px){
