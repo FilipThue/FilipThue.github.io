@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+:root{
+    --cookieSize: 200px;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000000;
+    background-size: 100% 100%;
+    
+    
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+
+main{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+img {
+    user-select: none;
+}
+
+#gif{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: -3;
+}
+
+#gif.show{
+    visibility: visible;
+}
+
+header{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+}
+
+header>h1{
+    background-color: #333333;
+    color: #41FC03;
+    padding: 10px;
+/*     padding-top: 50px; */
+}
+
+.counters{
+    position: relative;
+    width: 100vw;
+}
+
+.counter{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    
+
+}
+
+.dps{
+    padding-top: 0px;
+    font-size: 20px;
+}
+
+.cpsContainer{
+    position: absolute;
+    right: 5px;
+    bottom: -120px;
+    height: 100px;
+    width: 50px;
+    border: 4px solid black;
+    background-color: #333333;
+    padding: 0;
+    align-items: baseline;
+ 
+}
+
+.cpsMeter{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: var(--fill, 0%);
+    background: linear-gradient( green, green, orange, red);
+    transition: height 2s;
+}
+
+.cookieDiv{
+    position: relative;
+}
+
+.cookie{
+    margin: 31px;
+    padding: auto;
+    height: var(--cookieSize);
+    width: var(--cookieSize);
+    border: 3px solid rgb(123, 123, 123);
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.809);
+    
+}
+
+.cookie:hover{
+    cursor: pointer;
+}
+
+.cookie:active{
+    transform: translateY(5px);
+    scale: 0.97;
+    box-shadow: none;
+
+}
+
+
+
+/* //////////////////////////////////////////////////////// */
+.discs{
+    background-color: red;
+    padding: 5px;
+    position: absolute;
+    top: 47.5%;
+    left: 48.7%;
+    animation: discsRotate 200s infinite linear;
+    z-index: -1;
+    user-select: none;
+
+}
+
+@keyframes discsRotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);} 
+}
+
+.disc{
+    height: 40px;
+    position: absolute;
+    padding-left: 120px;
+    top: -15px;
+    transform: translateY(50%);
+    transition: padding 0.2s;
+    transform-origin: 0;
+}
+
+.disc.trykkes{
+    padding-left: 110px;
+}
+/* //////////////////////////////////////////////////////// */
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #333333;
+
+    position: absolute;
+    bottom: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-gap: 10px; */
+
+
+    align-items: center;  
+
+    z-index: 10;
+    padding-bottom: 70px;
+}
+
+.menu{
+    width: 95%;
+    height: 70%;
+    margin: 0 auto;
+    background: linear-gradient(#95ff6f, #32c800);
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    user-select: none;
+}
+
+.fa-solid{
+    font-size: 50px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.809);
+}
+
+footer>div:hover{
+    scale: 1.03;
+    cursor: pointer;
+
+}
+.windows{
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.shop{
+    width: 100vw;
+    height: 93%;
+    background-color:#444444;
+    color: white;
+    position: fixed;
+    bottom: -100%;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.shop>h1{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.shoplist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    height:60px;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    background-color: #41FC03e4;
+}
+
+.item:hover{
+    cursor: pointer;
+}
+
+.itemImage>img{
+    height: 60px;
+    width: 60px;
+    display: block;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    
+}
+.specs{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.specs>div{
+    width: 93%;
+}
+
+.information{
+    padding: 5px;
+}
+.stats{
+    padding: 5px;
+}
+
+.price>img{
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    color: rgb(186, 51, 51);
+}
+
+.informations{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 92%;
+    background-color:#444444;
+    color: white;
+    position: fixed;
+    bottom: -100%;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.informations>h1 {
+    font-size: 20px;
+    padding: 20px;
+    
+}
+
+.informationBox{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    background-color: #41FC03e4;
+}
+
+.informationBox>p{
+    padding: 5px;
+}
+
+.presentMenu{
+    bottom: 0%;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    visibility: visible;
+}
+canvas.show{
+    visibility: hidden;
+}
+
+@media only screen and (min-width:1140px){
+    .discs{
+        top: 47.6%;
+        left: 49.63%;
+    }
+    .cpsContainer{
+        bottom: -300px;
+        right: 200px;
+        height: 180px;
+        width: 70px;
+    }
+    footer{
+        padding-bottom: 0px;
+    }
+    header>h1{
+        padding: 10px;
+    }
+
+}
+
+/* @media(max-width:750px){
+    .disc{
+        height: 26px;
+        padding-left: 130px;
+    }
+    
+    .disc.trykkes{
+        padding-left: 140px;
+    }
+    .cookie{
+        height: 166px;
+        width: 166px;
+    }
+} */
+
+
+/* @media(max-width: 1100px){
+    .shop{
+        width: 100%;
+    }
+    .item{
+        width: 40%;
+    }
+}
+@media(max-width:750px){
+    .item{
+        width: 55%;
+    }
+}
+    @media(max-width:600px){
+        .item{
+            width: 70%;
+        }
+}
+@media(max-width:450px){
+    .item{
+        width: 90%;
+    }
+} */
