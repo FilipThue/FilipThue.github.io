@@ -145,6 +145,7 @@ header>h1{
     left: 48.7%;
     animation: discsRotate 200s infinite linear;
     z-index: -1;
+    user-select: none;
 
 }
 
