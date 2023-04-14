@@ -61,7 +61,6 @@ header>h1{
     background-color: #333333;
     color: #41FC03;
     padding: 10px;
-/*     padding-top: 50px; */
 }
 
 .counters{
@@ -357,9 +356,6 @@ canvas.show{
     }
     footer{
         padding-bottom: 0px;
-    }
-    header>h1{
-        padding: 10px;
     }
 
 }
