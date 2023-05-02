@@ -159,15 +159,35 @@ function update (){
     }
 
 }
+//setter tiden akkurat når nettisden åpnes
+let tidnaa =  Date.now() 
+console.log(tidnaa)
+if(Number(localStorage.dps>0)){
+    /* let = sisteDpsMilisekunder = localStorage.sisteDps */
+    dpsRefresh()
+}
+//siden den lagres som sting gjør parse den om til tall igjenn så tar den minus og legger denne scoren til de totale cookisene
+function dpsRefresh(){
+    sisteDps = Date.parse(localStorage.sisteDps)
+    console.log(sisteDps)
+    /* let sekunder = sisteDpsMilisekunder.getTime() */
+    console.log(localStorage.sisteDps)
+    let tid = Math.abs((tidnaa - sisteDps)/1000)
+    console.log(tid)
+    localStorage.cookies = (Number(localStorage.cookies)+(Number(localStorage.dps*tid)))
+    update()
+}
 
 setInterval (dpsFunc, 1000)
-
+//oppdaterer dps'en samt setter tiden på siste gang det skjedde i localStorage
 function dpsFunc (){
     localStorage.cookies = Number(localStorage.cookies) + Number(localStorage.dps)
+    sisteDps=new Date ()
+    localStorage.sisteDps=sisteDps
     update()
 
 }
-
+//oppdaterer count samt endrer clicks denne skjer hver gang cookien blir trykket på
 function count (){
     localStorage.cookies = Number(localStorage.cookies) + 1 + Number(localStorage.clickBoost)
     clicks = clicks + 1
@@ -395,17 +415,12 @@ function draw() {
 setInterval(draw, 33);
 //-----------------------------------------------
 // blue didrik
+//setter intervall slik at dancingDidrik blir målt hvert 30 sekund
+setInterval(dancingDidrik, 30000)
 
-let timerId = setInterval(dancingDidrik, 30000)
-
-
-
-
-
-
-
+//om click er mer enn 150 spilles video av didrik som danser så reseter denn hvis ikke skjer ingenting
 async function dancingDidrik(){
-    if(clicks>50){
+    if(clicks>150){
         localStorage.cookies = Math.round(Number(localStorage.cookies) * 1.05)
         update ()
         clicks = 0
