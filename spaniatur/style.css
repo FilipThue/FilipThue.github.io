@@ -51,6 +51,11 @@ p{
     text-align: left;
 }
 
+a {
+    color: #041134;
+    text-decoration: none;
+}
+
 #taxi{
     margin-bottom: 10px;
 }
