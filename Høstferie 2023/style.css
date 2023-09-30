@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: rgb(24, 63, 84);
+}
+
+body{
+    background-color: #d8d6d0;
+}
+
+#tittel{
+    text-align: center;
+    margin: 23px;
+    font-size: 55px;
+}
+
+#fyrverkeri{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#forside{
+    display:none;
+}
+
+
+#hjemreise{
+    background-color: rgb(228, 228, 228);
+    padding: 20px;
+    margin: 30px 10px;
+    border-radius: 10px;
+    box-shadow: 7px 10px 20px rgba(0, 0, 0, 0.517);
+
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+p{
+    margin: 40px 0px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+
+h3{
+    margin-top: 30px;
+}
+table{
+    display: block;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    font-size: 17px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    border-collapse: collapse;
+
+}
+#linje1{
+    position: relative;
+    top: 50px;
+    background-color:rgb(255, 255, 255);
+    height: 3px;
+    width: 100%;
+}
+#linje2{
+    position: relative;
+    top: 70px;
+    background-color:rgb(255, 255, 255);
+    height: 3px;
+    width: 100%;
+}
+td{
+    text-align: left;
+    padding: 10px;
+}
+
+img{
+    width: 100%;
+    border-radius: 3px;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+h2{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+
+.nedtelling{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countdown{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 10px;
+    text-align: center;
+    margin-bottom: 50%;
+}
+
+.day, .hour, .minute, .second{
+    font-size: 2.5rem;
+}
+
+.container-day, .container-hour, .container-minute, .container-second{
+    background-color: rgb(54, 141, 113);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 7px 10px 20px rgba(0, 0, 0, 0.517);
+
+}
+
+.waiting{
+    height: 50vh;
+}
+
+
+
+
+/* ------------------------------------------------------------------- */
+
+
+@media only screen and (min-width: 446px){
+    #linje2{
+        top: 50px;
+    }
+    
+}
+
+@media only screen and (min-width: 500px){
+    #tittel{
+        display: none;
+    }
+
+    #fyrverkeri{
+        display: none;
+    }
+
+    #forside{
+        display: block;
+        width: 100%;
+
+    }
+
+
+
+}
+
+@media only screen and (min-width: 900px){
+
+    #hjemreise{
+        padding: 40px;
+        margin: 10px 200px;
+        border-radius: 20px;
+
+    }
+
+    h1{
+        margin-bottom: 40px;
+        font-size: 85px;
+    }
+
+    p{
+        margin: 80px 0px;
+        margin-bottom: 40px;
+        font-size: 25px;
+    }
+
+
+    h3{
+        font-size: 25px;
+    }
+    table{
+        font-size: 25px;
+        border: 5px solid rgb(255, 255, 255);
+    }
+    #linje1{
+        top: 63px;
+        height: 5px;
+    }
+    #linje2{
+        top: 91px;
+        height: 5px;
+    }
+
+    h2{
+        font-size: 4rem;
+    }
+
+    .countdown{
+        margin: 30px 160px;
+        margin-bottom: 20%;
+
+    }
+}
+
+@media only screen and (min-width: 1040px){
+    #linje{
+        top: 80px;
+    }
+
+    h2{
+        font-size: 5rem;
+    }
+}
